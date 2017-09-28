@@ -1,7 +1,7 @@
 #ifndef NASH_H
 #define NASH_H
 
-//#include <nashville.h>
+#include <nashville.h>
 
 #include <QObject>
 #include <QWidget>
@@ -51,9 +51,9 @@
 #define HOR_SPACE 20
 //#define CHORD_SIZE
 //#define SYMBOL_SIZE
-//class Nashville;
+class Nashville;
 //class Nash : public QWidget
-class Nash : public QWidget
+class Nash : public Nashville
 {
     Q_OBJECT
 
@@ -88,7 +88,7 @@ private:
     void makePostCursor();
     //void makeMinorCursor();
 public:
-    explicit Nash(QWidget *parent = 0);
+    explicit Nash(Nashville *parent = 0);
     Nash(int x,int y, int w, int h, QScrollArea *scrollArea);
     virtual void paintEvent(QPaintEvent *);
     virtual void keyPressEvent(QKeyEvent *event);

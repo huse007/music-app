@@ -1,18 +1,19 @@
 #include "nash.h"
 
-Nash::Nash(QWidget *parent) : QWidget(parent)
+Nash::Nash(Nashville *parent) : Nashville(parent)
 {
 
 }
 Nash::Nash(int x, int y, int w, int h, QScrollArea *scrollArea)
 {
 
-    this->x = x;
-    this->y = y;
-    this->w = w;
-    this->h = h;
+    this->x = 100;
+    this->y = 100;
+    this->w = 200;
+    this->h = 200;
+    //this->scrollArea = scrollArea;
+    //scrollArea->setWidget(this);
     this->scrollArea = scrollArea;
-
 
 
     //doExport = false;

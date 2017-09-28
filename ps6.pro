@@ -14,7 +14,7 @@ TEMPLATE = app
 
 SOURCES += configdialog.cpp\
     main.cpp\
-#nash.cpp\
+nash.cpp\
 nashville.cpp \
     widget.cpp \
     rectangle.cpp \
@@ -26,7 +26,7 @@ nashville.cpp \
     legato.cpp \
     slide.cpp \
     settings.cpp \
-    nash.cpp \
+    #nash.cpp \
     chord.cpp \
     symboldialog.cpp \
     line.cpp \
@@ -45,9 +45,9 @@ HEADERS  += global.h \
     legato.h \
     slide.h \
     settings.h \
-#nash.h \
+nash.h \
     nashville.h \
-    nash.h \
+    #nash.h \
     chord.h \
     symboldialog.h \
     line.h \

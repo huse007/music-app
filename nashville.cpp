@@ -4,21 +4,20 @@ Nashville::Nashville(QWidget *parent) : QWidget(parent)
 {
 
 
-    setWindowTitle("Nashville Number System"
-                   "");
+    setWindowTitle("Nashville Number System");
     QPalette pal;
     t = new Title(0,20,TITLE_WIDTH*1.8,TITLE_HEIGTH,"Nashville Number Editor");
     scrollArea = new QScrollArea();
-
+    setWindowState(Qt::WindowMaximized);
     //b1 = createSymbolButtonGroup();
     qDebug()<<"3";
-    n = new Nash(0,0,WINDOW_WIDTH,WINDOW_HEIGTH,scrollArea);//////////////////////////////////////////////////////
+    //n = new Nash(0,0,WINDOW_WIDTH,WINDOW_HEIGTH,scrollArea);//////////////////////////////////////////////////////
     qvbl = new QVBoxLayout();
     qvbl2 = new QVBoxLayout();
     qhbl = new QHBoxLayout();
     qhbl2 = new QHBoxLayout();
     scrollArea->setFocusPolicy(Qt::NoFocus);
-    scrollArea->setWidget(n); /////////////////////////////////////////////////////////////////////////////////////7
+    //scrollArea->setWidget(childAt(100,100)); /////////////////////////////////////////////////////////////////////////////////////7
     scrollArea->setAlignment(Qt::AlignCenter);
     qApp->setStyleSheet("QPushButton {font-family:\"lastresort\";}");
     //background-color: yellow;
@@ -75,7 +74,7 @@ Nashville::Nashville(QWidget *parent) : QWidget(parent)
 
     }
 
-    connect(mapper,SIGNAL(mapped(QString)),n,SLOT(handlePart(QString))); //ENDRET fra n til this
+    connect(mapper,SIGNAL(mapped(QString)),this,SLOT(handlePart(QString))); //ENDRET fra n til this
 
     symbols = new QAction("View Symbols");
     artist = new QAction("Artist");
@@ -137,10 +136,10 @@ Nashville::Nashville(QWidget *parent) : QWidget(parent)
     /* signals/slots */
    // QSignalMapper *mapper = new QSignalMapper(this);
     connect(quit, SIGNAL(triggered()), this, SLOT(close()));
-    connect(symbols,SIGNAL(triggered()),n,SLOT(showSymbolDialog())); //ENDRET FRA n til this
-    connect(about,SIGNAL(triggered()),n,SLOT(showAbout()));
-    connect(whatis,SIGNAL(triggered()),n,SLOT(showWhatIs()));
-    connect(artist,SIGNAL(triggered()),n,SLOT(getSettings()));
+    connect(symbols,SIGNAL(triggered()),this,SLOT(showSymbolDialog())); //ENDRET FRA n til this
+    connect(about,SIGNAL(triggered()),this,SLOT(showAbout()));
+    connect(whatis,SIGNAL(triggered()),this,SLOT(showWhatIs()));
+    connect(artist,SIGNAL(triggered()),this,SLOT(getSettings()));
   /*  connect(intro,SIGNAL(triggered()),mapper,SLOT(map()));
     connect(verse,SIGNAL(triggered()),mapper,SLOT(map()));
     mapper->setMapping(intro,intro->text());
@@ -166,7 +165,7 @@ QGroupBox *Nashville::createDocumentButtonGroup()
         connect(b[i],SIGNAL(clicked()),mapper,SLOT(map()));
         mapper->setMapping(b[i],document[i]);
    }
-    connect(mapper,SIGNAL(mapped(QString)),n,SLOT(handleDocument(QString))); //Endret fra n til this
+    connect(mapper,SIGNAL(mapped(QString)),this,SLOT(handleDocument(QString))); //Endret fra n til this
    // gbox->setVerticalSpacing(0);
    // gbox->setMargin(0);
     groupBox->setMaximumWidth(400);
@@ -193,7 +192,7 @@ QGroupBox *Nashville::createTriadButtonGroup()
         connect(b[i],SIGNAL(clicked()),mapper,SLOT(map()));
         mapper->setMapping(b[i],chord[i]);
    }
-    connect(mapper,SIGNAL(mapped(QString)),n,SLOT(handleChord(QString))); //Endret fra n til this
+    connect(mapper,SIGNAL(mapped(QString)),this,SLOT(handleChord(QString))); //Endret fra n til this
     //gbox->setVerticalSpacing(0);
     //gbox->setMargin(0);
     groupBox->setMaximumWidth(400);
@@ -219,7 +218,7 @@ QGroupBox *Nashville::createPartButtonGroup()
          connect(b[i],SIGNAL(clicked()),mapper,SLOT(map()));
          mapper->setMapping(b[i],part[i]);
     }
-    connect(mapper,SIGNAL(mapped(QString)),n,SLOT(handlePart(QString))); //Endret fra n til this
+    connect(mapper,SIGNAL(mapped(QString)),this,SLOT(handlePart(QString))); //Endret fra n til this
     //hbox->addStretch(1);
     //vbox->addLayout(hbox);
     //gbox->setVerticalSpacing(0);
@@ -261,7 +260,7 @@ QGroupBox *Nashville::createSymbolButtonGroup()
         connect(b[i],SIGNAL(clicked()),mapper,SLOT(map()));
         mapper->setMapping(b[i],symbol[i]);
     }
-    connect(mapper,SIGNAL(mapped(QString)),n,SLOT(handleSymbol(QString)));
+    connect(mapper,SIGNAL(mapped(QString)),this,SLOT(handleSymbol(QString)));
     //gbox->setVerticalSpacing(0);
     //gbox->setMargin(0);
     groupBox->setMaximumWidth(400);
@@ -394,7 +393,7 @@ QGroupBox *Nashville::create9ButtonGroup()
         connect(b[i],SIGNAL(clicked()),mapper,SLOT(map()));
         mapper->setMapping(b[i],chord[i]);
     }
-    connect(mapper,SIGNAL(mapped(QString)),n,SLOT(handleChord(QString)));
+    connect(mapper,SIGNAL(mapped(QString)),this,SLOT(handleChord(QString)));
     //hbox->addStretch(1);
     //gbox->addLayout(hbox);
     groupBox->setLayout(gbox);

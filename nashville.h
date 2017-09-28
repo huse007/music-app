@@ -5,7 +5,7 @@
 #include <QWidget>
 #include <title.h>
 #include <logo.h>
-#include <nash.h>
+//#include <nash.h>
 
 #include <QScrollArea>
 #include <QVBoxLayout>
@@ -24,7 +24,7 @@
 #define UNICODE_FLAT 0x266d
 #define UNICODE_SHARP 0x266f
 #define BUTTON_W 100
-class Nash;
+//class Nash;
 class Nashville : public QWidget
 {
     Q_OBJECT
@@ -32,7 +32,7 @@ private:
     QScrollArea *s,*scrollArea;
     QVBoxLayout *qvbl,*qvbl2,*page_layout;
     QHBoxLayout *qhbl,*qhbl2;
-    Nash *n;
+    //Nash *n;
     QMenuBar *menuBar;
     QMenu *fileMenu;
     QMenu *file,*edit,*insert,*help,*part;
