@@ -10,7 +10,7 @@ Nashville::Nashville(QWidget *parent) : QWidget(parent)
     t = new Title(0,20,TITLE_WIDTH*1.8,TITLE_HEIGTH,"Nashville Number Editor");
     scrollArea = new QScrollArea();
 
-    b1 = createSymbolButtonGroup();
+    //b1 = createSymbolButtonGroup();
     qDebug()<<"3";
     n = new Nash(0,0,WINDOW_WIDTH,WINDOW_HEIGTH,scrollArea);//////////////////////////////////////////////////////
     qvbl = new QVBoxLayout();
@@ -30,8 +30,8 @@ Nashville::Nashville(QWidget *parent) : QWidget(parent)
     qvbl->addWidget(createPartButtonGroup());
     qvbl->addWidget(createTriadButtonGroup());
     qvbl->addWidget(create9ButtonGroup());
-    //qvbl->addWidget(createSymbolButtonGroup());
-    qvbl->addWidget(b1);
+    qvbl->addWidget(createSymbolButtonGroup());
+    //qvbl->addWidget(b1);
     qvbl->setAlignment(Qt::AlignTop);
     qhbl->addLayout(qvbl);
     qhbl->addWidget(scrollArea,0);
@@ -219,7 +219,7 @@ QGroupBox *Nashville::createPartButtonGroup()
          connect(b[i],SIGNAL(clicked()),mapper,SLOT(map()));
          mapper->setMapping(b[i],part[i]);
     }
-    connect(mapper,SIGNAL(mapped(QString)),this,SLOT(handlePart(QString))); //Endret fra n til this
+    connect(mapper,SIGNAL(mapped(QString)),n,SLOT(handlePart(QString))); //Endret fra n til this
     //hbox->addStretch(1);
     //vbox->addLayout(hbox);
     //gbox->setVerticalSpacing(0);
