@@ -1,0 +1,31 @@
+<RCC>
+    <qresource prefix="/">
+        <file>qt_notes/note64.png</file>
+        <file>qt_notes/note32.png</file>
+        <file>qt_notes/note16.png</file>
+        <file>qt_notes/note8.png</file>
+        <file>qt_notes/note4.png</file>
+        <file>qt_notes/note2.png</file>
+        <file>qt_notes/note1.png</file>
+        <file>qt_notes/dot.png</file>
+        <file>qt_notes/Verse.png</file>
+        <file>qt_notes/Tag.png</file>
+        <file>qt_notes/TA.png</file>
+        <file>qt_notes/Solo.png</file>
+        <file>qt_notes/Outro.png</file>
+        <file>qt_notes/Mid-8.png</file>
+        <file>qt_notes/Intro.png</file>
+        <file>qt_notes/Chorus.png</file>
+        <file>qt_notes/Channel.png</file>
+        <file>qt_notes/Bridge.png</file>
+        <file>qt_notes/dnote8.png</file>
+        <file>qt_notes/dnote16.png</file>
+        <file>qt_notes/dpush.png</file>
+        <file>qt_notes/push.png</file>
+        <file>qt_notes/hat.png</file>
+        <file>qt_notes/cutshort.png</file>
+        <file>qt_notes/coda.png</file>
+        <file>qt_notes/segno.png</file>
+        <file>qt_notes/SegnoTeken.svg</file>
+    </qresource>
+</RCC>
