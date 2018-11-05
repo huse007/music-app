@@ -19,5 +19,9 @@ At the moment files are read/written as .txt files
 
 The partitions can be exported to pdf
 
+## Installation
+
+Instructions will come in a couple of days.
+
 ## Author
 **Anders Huse Pedersen** - *initial work*
